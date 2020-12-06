@@ -1,12 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:healthcare/Screen/Videos.dart';
-import 'package:healthcare/Screen/mappage.dart';
-import 'package:healthcare/Screen/problems.dart';
-import 'package:healthcare/Screen/wecare.dart';
+import 'package:healthcare/Screen/Videos_page.dart';
+import 'package:healthcare/Screen/map_page.dart';
+import 'package:healthcare/Screen/problems_page.dart';
+import 'package:healthcare/Screen/wecare_page.dart';
 
-import 'Screen/exercise.dart';
-import 'Screen/solution.dart';
+import 'Screen/exercise_page.dart';
+import 'Screen/solution_page.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();

@@ -11,6 +11,7 @@ class Mappage extends StatefulWidget {
 }
 
 class _MappageState extends State<Mappage> {
+  //initilize variable
   var latitude = 37.42796133580664;
   var longitude = -122.085749655962;
   var name = 'abc';
@@ -22,8 +23,12 @@ class _MappageState extends State<Mappage> {
   Widget build(BuildContext context) {
     print(longitude.toString());
     print(latitude.toString());
+
+    //define google map controller
     Completer<GoogleMapController> _controller = Completer();
+    //set Marker
     Set<Marker> markers = Set();
+    // inital map Camera position
     final CameraPosition _kGooglePlex = CameraPosition(
       target: LatLng(37.42796133580664, -122.085749655962),
       zoom: 14.4746,
@@ -36,8 +41,12 @@ class _MappageState extends State<Mappage> {
       infoWindow: InfoWindow(title: name),
       position: LatLng(latitude, longitude),
     );
+
+
 // Add it to Set
     markers.add(resultMarker);
+
+    // Map Design
     return Scaffold(
       body: Container(
         child: GoogleMap(

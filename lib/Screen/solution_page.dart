@@ -1,20 +1,24 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:healthcare/Model/ProblemsModels.dart';
-import 'package:healthcare/Service/ProblemsService.dart';
+import 'package:healthcare/Model/SolutionModel.dart';
+import 'package:healthcare/Service/Solutionservice.dart';
 
 import '../Detail_Screen.dart';
 
-class Problems extends StatefulWidget {
+class solution extends StatefulWidget {
   @override
-  _ProblemsState createState() => _ProblemsState();
+  _solutionState createState() => _solutionState();
 }
 
-class _ProblemsState extends State<Problems> {
-  List<ProblemsModels> _users;
+class _solutionState extends State<solution> {
+  // initilize  Variable
+  List<SolutionModel> _solutionmodel;
   bool _loading;
 
+
+
+  // Screen Design
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,12 +26,13 @@ class _ProblemsState extends State<Problems> {
         width: 370,
         child: _loading
             ? Center(child: CircularProgressIndicator())
+        // ListView for display items
             : ListView.builder(
-                itemCount: null == _users ? 0 : _users.length,
+                itemCount: null == _solutionmodel ? 0 : _solutionmodel.length,
                 scrollDirection: Axis.vertical,
                 itemBuilder: (context, i) {
-                  print(_users.length);
-                  ProblemsModels user = _users[i];
+                  print(_solutionmodel.length);
+                  SolutionModel user = _solutionmodel[i];
                   return GestureDetector(
                       onTap: () {
                         Navigator.push(
@@ -61,10 +66,9 @@ class _ProblemsState extends State<Problems> {
                             Text(
                               user.title.rendered,
                               style: GoogleFonts.asul(
-                                fontSize: 20,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                              ),
+                                  fontSize: 20,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
                             ),
                             SizedBox(
                               height: 20,
@@ -80,11 +84,12 @@ class _ProblemsState extends State<Problems> {
 
   @override
   void initState() {
+    // Loading Data
     _loading = true;
     super.initState();
-    ProblemsServices.getproblems().then((users) {
+    solutionServices.getsolution().then((users) {
       setState(() {
-        _users = users;
+        _solutionmodel = users;
         _loading = false;
       });
     });

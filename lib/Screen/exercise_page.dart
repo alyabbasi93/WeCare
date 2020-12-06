@@ -1,20 +1,26 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:healthcare/Model/SolutionModel.dart';
-import 'package:healthcare/Service/Solutionservice.dart';
+import 'package:healthcare/Model/ExerciseModel.dart';
+import 'package:healthcare/Service/Execiseservice.dart';
 
 import '../Detail_Screen.dart';
 
-class solution extends StatefulWidget {
+class ExerciseBlog extends StatefulWidget {
+  ExerciseBlog({Key key}) : super(key: key);
+
   @override
-  _solutionState createState() => _solutionState();
+  _ExerciseBlogState createState() => _ExerciseBlogState();
 }
 
-class _solutionState extends State<solution> {
-  List<SolutionModel> _users;
+class _ExerciseBlogState extends State<ExerciseBlog> {
+
+  // initilize  Variable
+  List<ExerciseModels> _exercisemodel;
   bool _loading;
 
+
+  // Screen Design
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,14 +28,16 @@ class _solutionState extends State<solution> {
         width: 370,
         child: _loading
             ? Center(child: CircularProgressIndicator())
+             // ListView for display items
             : ListView.builder(
-                itemCount: null == _users ? 0 : _users.length,
+                itemCount: null == _exercisemodel ? 0 : _exercisemodel.length,
                 scrollDirection: Axis.vertical,
                 itemBuilder: (context, i) {
-                  print(_users.length);
-                  SolutionModel user = _users[i];
+                  print(_exercisemodel.length);
+                  ExerciseModels  user = _exercisemodel[i];
                   return GestureDetector(
                       onTap: () {
+                        // Move to detail Page
                         Navigator.push(
                           context,
                           MaterialPageRoute(
@@ -61,9 +69,10 @@ class _solutionState extends State<solution> {
                             Text(
                               user.title.rendered,
                               style: GoogleFonts.asul(
-                                  fontSize: 20,
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
+                                fontSize: 20,
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                             SizedBox(
                               height: 20,
@@ -79,11 +88,12 @@ class _solutionState extends State<solution> {
 
   @override
   void initState() {
+    // Loading Data
     _loading = true;
     super.initState();
-    solutionServices.getsolution().then((users) {
+    ExerciseServices.getexercise().then((users) {
       setState(() {
-        _users = users;
+        _exercisemodel = users;
         _loading = false;
       });
     });

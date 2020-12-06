@@ -4,14 +4,14 @@
 
 import 'dart:convert';
 
-List<Exercise> exerciseFromJson(String str) =>
-    List<Exercise>.from(json.decode(str).map((x) => Exercise.fromJson(x)));
+List<ExerciseModels> exerciseFromJson(String str) =>
+    List<ExerciseModels>.from(json.decode(str).map((x) => ExerciseModels.fromJson(x)));
 
-String exerciseToJson(List<Exercise> data) =>
+String exerciseToJson(List<ExerciseModels> data) =>
     json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
-class Exercise {
-  Exercise({
+class ExerciseModels {
+  ExerciseModels({
     this.id,
     this.date,
     this.dateGmt,
@@ -65,7 +65,7 @@ class Exercise {
   BetterFeaturedImage betterFeaturedImage;
   Links links;
 
-  factory Exercise.fromJson(Map<String, dynamic> json) => Exercise(
+  factory ExerciseModels.fromJson(Map<String, dynamic> json) => ExerciseModels(
         id: json["id"],
         date: DateTime.parse(json["date"]),
         dateGmt: DateTime.parse(json["date_gmt"]),

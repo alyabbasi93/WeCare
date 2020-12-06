@@ -1,22 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:healthcare/Model/ExerciseModel.dart';
-import 'package:healthcare/Service/Execiseservice.dart';
+import 'package:healthcare/Model/ProblemsModels.dart';
+import 'package:healthcare/Service/ProblemsService.dart';
 
 import '../Detail_Screen.dart';
 
-class ExerciseBlog extends StatefulWidget {
-  ExerciseBlog({Key key}) : super(key: key);
-
+class Problems extends StatefulWidget {
   @override
-  _ExerciseBlogState createState() => _ExerciseBlogState();
+  _ProblemsState createState() => _ProblemsState();
 }
 
-class _ExerciseBlogState extends State<ExerciseBlog> {
-  List<Exercise> _users;
+class _ProblemsState extends State<Problems> {
+  // initilize  Variable
+  List<ProblemsModels> _problemmodel;
   bool _loading;
 
+  // Screen Design
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,12 +24,13 @@ class _ExerciseBlogState extends State<ExerciseBlog> {
         width: 370,
         child: _loading
             ? Center(child: CircularProgressIndicator())
+           // ListView for display items
             : ListView.builder(
-                itemCount: null == _users ? 0 : _users.length,
+                itemCount: null == _problemmodel ? 0 : _problemmodel.length,
                 scrollDirection: Axis.vertical,
                 itemBuilder: (context, i) {
-                  print(_users.length);
-                  Exercise user = _users[i];
+                  print(_problemmodel.length);
+                  ProblemsModels user = _problemmodel[i];
                   return GestureDetector(
                       onTap: () {
                         Navigator.push(
@@ -82,11 +83,12 @@ class _ExerciseBlogState extends State<ExerciseBlog> {
 
   @override
   void initState() {
+    // Loading Data
     _loading = true;
     super.initState();
-    ExerciseServices.getexercise().then((users) {
+    ProblemsServices.getproblems().then((users) {
       setState(() {
-        _users = users;
+        _problemmodel = users;
         _loading = false;
       });
     });
