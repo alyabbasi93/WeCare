@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "wecare-obpn",
+  "private_key_id": "1f2b34f35d50899a10c4992f9b4924daace3ba39",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC/POlpko1PfH34\nOS9ERA3xJLvAaGEIGrqMkEY3PtgMa63O8X54hFS8QwP9y9Y9Z7wadvkWy9LiSULs\nX8eTD/Z9ZJGtlbeVBY/3rYhbcfA181em71nPGI+5Y7peIxSnX7IueJME2EyVpSVj\n9WweVii/uRMShL64uvGB4fOVgINA3u96suEpK/QuZA759RjtpPeF5XNQg9bNExQq\nRreKlJcOhJXF0D1nrp4CvNanoGAtrOkgG3GUnjnWneVFaK+4cKokCwimPDttQTOr\nM5VnQHPt9NMqgBv636xZu040FO3kg83rJF83hgVK6oceqmyoPUN+KnZ7RChXINcb\nZ14Rvb9JAgMBAAECggEADH8T95CaiE+nwaEm/AyAZroSRLvtX0Sz3PyOggyqvIEK\nzgOM0p4/FUBB0gNQYBnXulj85ObzxFKqO1z04yC/aCk6tb+bS/Mdmb8usl8LJdNd\nbmykjzpZJfGk24LqVheUQqIhZUcnFf5BJ7uBUagqqICVBPhEqDibEHQt4R6RNRtf\nTBtmglRyTQ8ClVcD+ROS/crmI1k2nEew9ZDPGuOUDRc6b6If+b3yp2IVvhIZTlzs\nT+ATIQOtH0TZOM82YHY3YUrHoevs5jayE6GHbv5EX/Dsly3quiPNYJaCb2zPANIN\n0Z/C39ebXEmqD2gAShdD+lLxiX1JYfW1WPRk7KS+qQKBgQDrvlPCqhxKEUzZwlDG\nXJW0kho4hyg10ddDTgClpCJSfFIZsXkIyyHyAC1YpNXQR6uW02x5+DEbjggMQodb\nnlBgoczjJ3Bpwqp9AAjXrbqReEQXLt18idUSINUZ8EtEHeGWtZh4ecoFN54jVxBv\n/tESi0uI9UPSnXw6wA5ygPx7LQKBgQDPq5eK8zZ7i8+lGeV2R1IHmb6e3swambep\nc4a9XK02dA1kBuqznkH8Pg4vPm3xdW3eQJXM5Os9+CAsx+m3WnEd3sUR/t4P4xpy\ngIJISgZTbZKTB1nwKyizIF335IvqqEr2ClJ0YRv2Ry8yfQZLFdO5DulWaILl5TdC\nFQD+ZLA2DQKBgQC0eVSuZoSZv3zSCIzGDwMc5ezk8bO64BaoFAMyy+DqvPotaUx7\niudF2RTeE/MMLJIUOW+GQJd3vNg0aootfZmTIMs162+Hx9u1Ll2WoA2AaE3YYax2\nNx7Dbhc2cFtunmGhewxqzvH15IpQC8stsipkw/bjtsBhcOc2IunshwrDUQKBgAZA\nfzZyrgA4LE8nIW5XJVQPP9rekDx4xju2u6a1xI0wHzsUrjosGIZ0g87OTVcIlv8q\n6JebiK1769QNTK71bRReIYayKpNF3gT2c3WjrN8UHGaKwR1m3znNTqbo3YF6AY+4\nrdTNG59lczlM5EScapxWo5WzXcV4ChrWMQp3k4p9AoGAOn8DUIvqkWIRE6G3a0n9\nIy+PPqn5SoKgY2g9Eswy61tlInjVJGW691G70lJtki7qirzPDTxoKEa65Z5hke3j\nl08yY5TWND8q7RazguA8tJzZFB1yF94dzaDNi9CPgzb7drcBPQ6cC3dJYPFf1rbn\namIRbSxYNVojc5aHq2TsIQk=\n-----END PRIVATE KEY-----\n",
+  "client_email": "wecare@wecare-obpn.iam.gserviceaccount.com",
+  "client_id": "107995658249747526436",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/wecare%40wecare-obpn.iam.gserviceaccount.com"
+}
