@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:healthcare/Screen/Videos_page.dart';
+import 'package:healthcare/Screen/home_page.dart';
 import 'package:healthcare/Screen/map_page.dart';
 import 'package:healthcare/Screen/problems_page.dart';
-import 'package:healthcare/Screen/wecare_page.dart';
 
 import 'Screen/exercise_page.dart';
 import 'Screen/solution_page.dart';
@@ -37,18 +37,18 @@ class AppContainer extends StatefulWidget {
 
 class _AppContainerState extends State<AppContainer> {
   final List<String> menuItems = [
+    "Home",
     "Problems",
     "Solution",
     "Exercise",
-    "WeCare Bot",
     "Videos",
     "Map"
   ];
   final List<String> menuIcons = [
+    "icon_home",
     "problem",
     "jigsaw",
     "exercise",
-    "bot",
     "video",
     "worldwide"
   ];
@@ -61,7 +61,7 @@ class _AppContainerState extends State<AppContainer> {
 
   int selectedMenuItem = 0;
 
-  String pageTitle = "Problems";
+  String pageTitle = "Home";
   int _selectedIndex = 0;
   void setSidebarState() {
     setState(() {
@@ -74,19 +74,19 @@ class _AppContainerState extends State<AppContainer> {
   void setPageTitle() {
     switch (selectedMenuItem) {
       case 0:
-        pageTitle = "Problems";
+        pageTitle = "Home";
         _onItemTapped(0);
         break;
       case 1:
-        pageTitle = "Solution";
+        pageTitle = "Problems";
         _onItemTapped(1);
         break;
       case 2:
-        pageTitle = "Exercise";
+        pageTitle = "Solution";
         _onItemTapped(2);
         break;
       case 3:
-        pageTitle = "WeCare Bot";
+        pageTitle = "Exercise";
         _onItemTapped(3);
         break;
       case 4:
@@ -107,10 +107,10 @@ class _AppContainerState extends State<AppContainer> {
   }
 
   List _widgetOptions = [
+    HomePage(),
     Problems(),
     solution(),
     ExerciseBlog(),
-    wecare(),
     videos(),
     Mappage(),
   ];

@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:healthcare/Model/ExerciseModel.dart';
-import 'package:healthcare/Model/ProblemsModels.dart';
 import 'package:healthcare/Service/Execiseservice.dart';
 
 import '../Detail_Screen.dart';
