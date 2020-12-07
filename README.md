@@ -1,4 +1,4 @@
-# healthcare
+# WeCare
 
 A new Flutter application.
 
