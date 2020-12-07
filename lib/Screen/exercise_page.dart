@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:healthcare/Model/ExerciseModel.dart';
+import 'package:healthcare/Model/ProblemsModels.dart';
 import 'package:healthcare/Service/Execiseservice.dart';
 
 import '../Detail_Screen.dart';
@@ -14,11 +15,9 @@ class ExerciseBlog extends StatefulWidget {
 }
 
 class _ExerciseBlogState extends State<ExerciseBlog> {
-
   // initilize  Variable
   List<ExerciseModels> _exercisemodel;
   bool _loading;
-
 
   // Screen Design
   @override
@@ -28,13 +27,13 @@ class _ExerciseBlogState extends State<ExerciseBlog> {
         width: 370,
         child: _loading
             ? Center(child: CircularProgressIndicator())
-             // ListView for display items
+            // ListView for display items
             : ListView.builder(
                 itemCount: null == _exercisemodel ? 0 : _exercisemodel.length,
                 scrollDirection: Axis.vertical,
                 itemBuilder: (context, i) {
                   print(_exercisemodel.length);
-                  ExerciseModels  user = _exercisemodel[i];
+                  ExerciseModels user = _exercisemodel[i];
                   return GestureDetector(
                       onTap: () {
                         // Move to detail Page

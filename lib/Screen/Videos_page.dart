@@ -11,7 +11,6 @@ class videos extends StatefulWidget {
 class _videosState extends State<videos> {
   @override
   Widget build(BuildContext context) {
-
     List itemList = [
       'https://www.sample-videos.com/video123/mp4/720/big_buck_bunny_720p_20mb.mp4',
       'https://wecare2021.000webhostapp.com/bot/Talking%20Mental%20Health.mp4'

@@ -1,14 +1,12 @@
 // To parse this JSON data, do
 //
-//     final exercise = exerciseFromJson(jsonString);
+//     final exerciseModels = exerciseModelsFromJson(jsonString);
 
 import 'dart:convert';
 
-List<ExerciseModels> exerciseFromJson(String str) =>
-    List<ExerciseModels>.from(json.decode(str).map((x) => ExerciseModels.fromJson(x)));
+List<ExerciseModels> exerciseModelsFromJson(String str) => List<ExerciseModels>.from(json.decode(str).map((x) => ExerciseModels.fromJson(x)));
 
-String exerciseToJson(List<ExerciseModels> data) =>
-    json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String exerciseModelsToJson(List<ExerciseModels> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class ExerciseModels {
   ExerciseModels({
@@ -66,61 +64,60 @@ class ExerciseModels {
   Links links;
 
   factory ExerciseModels.fromJson(Map<String, dynamic> json) => ExerciseModels(
-        id: json["id"],
-        date: DateTime.parse(json["date"]),
-        dateGmt: DateTime.parse(json["date_gmt"]),
-        guid: Guid.fromJson(json["guid"]),
-        modified: DateTime.parse(json["modified"]),
-        modifiedGmt: DateTime.parse(json["modified_gmt"]),
-        slug: json["slug"],
-        status: json["status"],
-        type: json["type"],
-        link: json["link"],
-        title: Guid.fromJson(json["title"]),
-        content: Content.fromJson(json["content"]),
-        excerpt: Content.fromJson(json["excerpt"]),
-        author: json["author"],
-        featuredMedia: json["featured_media"],
-        commentStatus: json["comment_status"],
-        pingStatus: json["ping_status"],
-        sticky: json["sticky"],
-        template: json["template"],
-        format: json["format"],
-        meta: List<dynamic>.from(json["meta"].map((x) => x)),
-        categories: List<int>.from(json["categories"].map((x) => x)),
-        tags: List<dynamic>.from(json["tags"].map((x) => x)),
-        betterFeaturedImage:
-            BetterFeaturedImage.fromJson(json["better_featured_image"]),
-        links: Links.fromJson(json["_links"]),
-      );
+    id: json["id"],
+    date: DateTime.parse(json["date"]),
+    dateGmt: DateTime.parse(json["date_gmt"]),
+    guid: Guid.fromJson(json["guid"]),
+    modified: DateTime.parse(json["modified"]),
+    modifiedGmt: DateTime.parse(json["modified_gmt"]),
+    slug: json["slug"],
+    status: json["status"],
+    type: json["type"],
+    link: json["link"],
+    title: Guid.fromJson(json["title"]),
+    content: Content.fromJson(json["content"]),
+    excerpt: Content.fromJson(json["excerpt"]),
+    author: json["author"],
+    featuredMedia: json["featured_media"],
+    commentStatus: json["comment_status"],
+    pingStatus: json["ping_status"],
+    sticky: json["sticky"],
+    template: json["template"],
+    format: json["format"],
+    meta: List<dynamic>.from(json["meta"].map((x) => x)),
+    categories: List<int>.from(json["categories"].map((x) => x)),
+    tags: List<dynamic>.from(json["tags"].map((x) => x)),
+    betterFeaturedImage: BetterFeaturedImage.fromJson(json["better_featured_image"]),
+    links: Links.fromJson(json["_links"]),
+  );
 
   Map<String, dynamic> toJson() => {
-        "id": id,
-        "date": date.toIso8601String(),
-        "date_gmt": dateGmt.toIso8601String(),
-        "guid": guid.toJson(),
-        "modified": modified.toIso8601String(),
-        "modified_gmt": modifiedGmt.toIso8601String(),
-        "slug": slug,
-        "status": status,
-        "type": type,
-        "link": link,
-        "title": title.toJson(),
-        "content": content.toJson(),
-        "excerpt": excerpt.toJson(),
-        "author": author,
-        "featured_media": featuredMedia,
-        "comment_status": commentStatus,
-        "ping_status": pingStatus,
-        "sticky": sticky,
-        "template": template,
-        "format": format,
-        "meta": List<dynamic>.from(meta.map((x) => x)),
-        "categories": List<dynamic>.from(categories.map((x) => x)),
-        "tags": List<dynamic>.from(tags.map((x) => x)),
-        "better_featured_image": betterFeaturedImage.toJson(),
-        "_links": links.toJson(),
-      };
+    "id": id,
+    "date": date.toIso8601String(),
+    "date_gmt": dateGmt.toIso8601String(),
+    "guid": guid.toJson(),
+    "modified": modified.toIso8601String(),
+    "modified_gmt": modifiedGmt.toIso8601String(),
+    "slug": slug,
+    "status": status,
+    "type": type,
+    "link": link,
+    "title": title.toJson(),
+    "content": content.toJson(),
+    "excerpt": excerpt.toJson(),
+    "author": author,
+    "featured_media": featuredMedia,
+    "comment_status": commentStatus,
+    "ping_status": pingStatus,
+    "sticky": sticky,
+    "template": template,
+    "format": format,
+    "meta": List<dynamic>.from(meta.map((x) => x)),
+    "categories": List<dynamic>.from(categories.map((x) => x)),
+    "tags": List<dynamic>.from(tags.map((x) => x)),
+    "better_featured_image": betterFeaturedImage.toJson(),
+    "_links": links.toJson(),
+  };
 }
 
 class BetterFeaturedImage {
@@ -141,31 +138,30 @@ class BetterFeaturedImage {
   String description;
   String mediaType;
   MediaDetails mediaDetails;
-  dynamic post;
+  int post;
   String sourceUrl;
 
-  factory BetterFeaturedImage.fromJson(Map<String, dynamic> json) =>
-      BetterFeaturedImage(
-        id: json["id"],
-        altText: json["alt_text"],
-        caption: json["caption"],
-        description: json["description"],
-        mediaType: json["media_type"],
-        mediaDetails: MediaDetails.fromJson(json["media_details"]),
-        post: json["post"],
-        sourceUrl: json["source_url"],
-      );
+  factory BetterFeaturedImage.fromJson(Map<String, dynamic> json) => BetterFeaturedImage(
+    id: json["id"],
+    altText: json["alt_text"],
+    caption: json["caption"],
+    description: json["description"],
+    mediaType: json["media_type"],
+    mediaDetails: MediaDetails.fromJson(json["media_details"]),
+    post: json["post"],
+    sourceUrl: json["source_url"],
+  );
 
   Map<String, dynamic> toJson() => {
-        "id": id,
-        "alt_text": altText,
-        "caption": caption,
-        "description": description,
-        "media_type": mediaType,
-        "media_details": mediaDetails.toJson(),
-        "post": post,
-        "source_url": sourceUrl,
-      };
+    "id": id,
+    "alt_text": altText,
+    "caption": caption,
+    "description": description,
+    "media_type": mediaType,
+    "media_details": mediaDetails.toJson(),
+    "post": post,
+    "source_url": sourceUrl,
+  };
 }
 
 class MediaDetails {
@@ -184,20 +180,20 @@ class MediaDetails {
   ImageMeta imageMeta;
 
   factory MediaDetails.fromJson(Map<String, dynamic> json) => MediaDetails(
-        width: json["width"],
-        height: json["height"],
-        file: json["file"],
-        sizes: Sizes.fromJson(json["sizes"]),
-        imageMeta: ImageMeta.fromJson(json["image_meta"]),
-      );
+    width: json["width"],
+    height: json["height"],
+    file: json["file"],
+    sizes: Sizes.fromJson(json["sizes"]),
+    imageMeta: ImageMeta.fromJson(json["image_meta"]),
+  );
 
   Map<String, dynamic> toJson() => {
-        "width": width,
-        "height": height,
-        "file": file,
-        "sizes": sizes.toJson(),
-        "image_meta": imageMeta.toJson(),
-      };
+    "width": width,
+    "height": height,
+    "file": file,
+    "sizes": sizes.toJson(),
+    "image_meta": imageMeta.toJson(),
+  };
 }
 
 class ImageMeta {
@@ -230,73 +226,62 @@ class ImageMeta {
   List<dynamic> keywords;
 
   factory ImageMeta.fromJson(Map<String, dynamic> json) => ImageMeta(
-        aperture: json["aperture"],
-        credit: json["credit"],
-        camera: json["camera"],
-        caption: json["caption"],
-        createdTimestamp: json["created_timestamp"],
-        copyright: json["copyright"],
-        focalLength: json["focal_length"],
-        iso: json["iso"],
-        shutterSpeed: json["shutter_speed"],
-        title: json["title"],
-        orientation: json["orientation"],
-        keywords: List<dynamic>.from(json["keywords"].map((x) => x)),
-      );
+    aperture: json["aperture"],
+    credit: json["credit"],
+    camera: json["camera"],
+    caption: json["caption"],
+    createdTimestamp: json["created_timestamp"],
+    copyright: json["copyright"],
+    focalLength: json["focal_length"],
+    iso: json["iso"],
+    shutterSpeed: json["shutter_speed"],
+    title: json["title"],
+    orientation: json["orientation"],
+    keywords: List<dynamic>.from(json["keywords"].map((x) => x)),
+  );
 
   Map<String, dynamic> toJson() => {
-        "aperture": aperture,
-        "credit": credit,
-        "camera": camera,
-        "caption": caption,
-        "created_timestamp": createdTimestamp,
-        "copyright": copyright,
-        "focal_length": focalLength,
-        "iso": iso,
-        "shutter_speed": shutterSpeed,
-        "title": title,
-        "orientation": orientation,
-        "keywords": List<dynamic>.from(keywords.map((x) => x)),
-      };
+    "aperture": aperture,
+    "credit": credit,
+    "camera": camera,
+    "caption": caption,
+    "created_timestamp": createdTimestamp,
+    "copyright": copyright,
+    "focal_length": focalLength,
+    "iso": iso,
+    "shutter_speed": shutterSpeed,
+    "title": title,
+    "orientation": orientation,
+    "keywords": List<dynamic>.from(keywords.map((x) => x)),
+  };
 }
 
 class Sizes {
   Sizes({
     this.medium,
     this.thumbnail,
-    this.mediumLarge,
     this.cherryBlogDefault,
-    this.large,
   });
 
-  CherryBlogDefault medium;
-  CherryBlogDefault thumbnail;
-  CherryBlogDefault mediumLarge;
-  CherryBlogDefault cherryBlogDefault;
-  CherryBlogDefault large;
+  Thumbnail medium;
+  Thumbnail thumbnail;
+  Thumbnail cherryBlogDefault;
 
   factory Sizes.fromJson(Map<String, dynamic> json) => Sizes(
-        medium: CherryBlogDefault.fromJson(json["medium"]),
-        thumbnail: CherryBlogDefault.fromJson(json["thumbnail"]),
-        mediumLarge: CherryBlogDefault.fromJson(json["medium_large"]),
-        cherryBlogDefault:
-            CherryBlogDefault.fromJson(json["cherry-blog-default"]),
-        large: json["large"] == null
-            ? null
-            : CherryBlogDefault.fromJson(json["large"]),
-      );
+    medium: json["medium"] == null ? null : Thumbnail.fromJson(json["medium"]),
+    thumbnail: Thumbnail.fromJson(json["thumbnail"]),
+    cherryBlogDefault: json["cherry-blog-default"] == null ? null : Thumbnail.fromJson(json["cherry-blog-default"]),
+  );
 
   Map<String, dynamic> toJson() => {
-        "medium": medium.toJson(),
-        "thumbnail": thumbnail.toJson(),
-        "medium_large": mediumLarge.toJson(),
-        "cherry-blog-default": cherryBlogDefault.toJson(),
-        "large": large == null ? null : large.toJson(),
-      };
+    "medium": medium == null ? null : medium.toJson(),
+    "thumbnail": thumbnail.toJson(),
+    "cherry-blog-default": cherryBlogDefault == null ? null : cherryBlogDefault.toJson(),
+  };
 }
 
-class CherryBlogDefault {
-  CherryBlogDefault({
+class Thumbnail {
+  Thumbnail({
     this.file,
     this.width,
     this.height,
@@ -310,22 +295,21 @@ class CherryBlogDefault {
   String mimeType;
   String sourceUrl;
 
-  factory CherryBlogDefault.fromJson(Map<String, dynamic> json) =>
-      CherryBlogDefault(
-        file: json["file"],
-        width: json["width"],
-        height: json["height"],
-        mimeType: json["mime-type"],
-        sourceUrl: json["source_url"],
-      );
+  factory Thumbnail.fromJson(Map<String, dynamic> json) => Thumbnail(
+    file: json["file"],
+    width: json["width"],
+    height: json["height"],
+    mimeType: json["mime-type"],
+    sourceUrl: json["source_url"],
+  );
 
   Map<String, dynamic> toJson() => {
-        "file": file,
-        "width": width,
-        "height": height,
-        "mime-type": mimeType,
-        "source_url": sourceUrl,
-      };
+    "file": file,
+    "width": width,
+    "height": height,
+    "mime-type": mimeType,
+    "source_url": sourceUrl,
+  };
 }
 
 class Content {
@@ -338,14 +322,14 @@ class Content {
   bool protected;
 
   factory Content.fromJson(Map<String, dynamic> json) => Content(
-        rendered: json["rendered"],
-        protected: json["protected"],
-      );
+    rendered: json["rendered"],
+    protected: json["protected"],
+  );
 
   Map<String, dynamic> toJson() => {
-        "rendered": rendered,
-        "protected": protected,
-      };
+    "rendered": rendered,
+    "protected": protected,
+  };
 }
 
 class Guid {
@@ -356,12 +340,12 @@ class Guid {
   String rendered;
 
   factory Guid.fromJson(Map<String, dynamic> json) => Guid(
-        rendered: json["rendered"],
-      );
+    rendered: json["rendered"],
+  );
 
   Map<String, dynamic> toJson() => {
-        "rendered": rendered,
-      };
+    "rendered": rendered,
+  };
 }
 
 class Links {
@@ -392,45 +376,32 @@ class Links {
   List<Cury> curies;
 
   factory Links.fromJson(Map<String, dynamic> json) => Links(
-        self: List<About>.from(json["self"].map((x) => About.fromJson(x))),
-        collection:
-            List<About>.from(json["collection"].map((x) => About.fromJson(x))),
-        about: List<About>.from(json["about"].map((x) => About.fromJson(x))),
-        author:
-            List<Author>.from(json["author"].map((x) => Author.fromJson(x))),
-        replies:
-            List<Author>.from(json["replies"].map((x) => Author.fromJson(x))),
-        versionHistory: List<VersionHistory>.from(
-            json["version-history"].map((x) => VersionHistory.fromJson(x))),
-        predecessorVersion: List<PredecessorVersion>.from(
-            json["predecessor-version"]
-                .map((x) => PredecessorVersion.fromJson(x))),
-        wpFeaturedmedia: List<Author>.from(
-            json["wp:featuredmedia"].map((x) => Author.fromJson(x))),
-        wpAttachment: List<About>.from(
-            json["wp:attachment"].map((x) => About.fromJson(x))),
-        wpTerm:
-            List<WpTerm>.from(json["wp:term"].map((x) => WpTerm.fromJson(x))),
-        curies: List<Cury>.from(json["curies"].map((x) => Cury.fromJson(x))),
-      );
+    self: List<About>.from(json["self"].map((x) => About.fromJson(x))),
+    collection: List<About>.from(json["collection"].map((x) => About.fromJson(x))),
+    about: List<About>.from(json["about"].map((x) => About.fromJson(x))),
+    author: List<Author>.from(json["author"].map((x) => Author.fromJson(x))),
+    replies: List<Author>.from(json["replies"].map((x) => Author.fromJson(x))),
+    versionHistory: List<VersionHistory>.from(json["version-history"].map((x) => VersionHistory.fromJson(x))),
+    predecessorVersion: List<PredecessorVersion>.from(json["predecessor-version"].map((x) => PredecessorVersion.fromJson(x))),
+    wpFeaturedmedia: List<Author>.from(json["wp:featuredmedia"].map((x) => Author.fromJson(x))),
+    wpAttachment: List<About>.from(json["wp:attachment"].map((x) => About.fromJson(x))),
+    wpTerm: List<WpTerm>.from(json["wp:term"].map((x) => WpTerm.fromJson(x))),
+    curies: List<Cury>.from(json["curies"].map((x) => Cury.fromJson(x))),
+  );
 
   Map<String, dynamic> toJson() => {
-        "self": List<dynamic>.from(self.map((x) => x.toJson())),
-        "collection": List<dynamic>.from(collection.map((x) => x.toJson())),
-        "about": List<dynamic>.from(about.map((x) => x.toJson())),
-        "author": List<dynamic>.from(author.map((x) => x.toJson())),
-        "replies": List<dynamic>.from(replies.map((x) => x.toJson())),
-        "version-history":
-            List<dynamic>.from(versionHistory.map((x) => x.toJson())),
-        "predecessor-version":
-            List<dynamic>.from(predecessorVersion.map((x) => x.toJson())),
-        "wp:featuredmedia":
-            List<dynamic>.from(wpFeaturedmedia.map((x) => x.toJson())),
-        "wp:attachment":
-            List<dynamic>.from(wpAttachment.map((x) => x.toJson())),
-        "wp:term": List<dynamic>.from(wpTerm.map((x) => x.toJson())),
-        "curies": List<dynamic>.from(curies.map((x) => x.toJson())),
-      };
+    "self": List<dynamic>.from(self.map((x) => x.toJson())),
+    "collection": List<dynamic>.from(collection.map((x) => x.toJson())),
+    "about": List<dynamic>.from(about.map((x) => x.toJson())),
+    "author": List<dynamic>.from(author.map((x) => x.toJson())),
+    "replies": List<dynamic>.from(replies.map((x) => x.toJson())),
+    "version-history": List<dynamic>.from(versionHistory.map((x) => x.toJson())),
+    "predecessor-version": List<dynamic>.from(predecessorVersion.map((x) => x.toJson())),
+    "wp:featuredmedia": List<dynamic>.from(wpFeaturedmedia.map((x) => x.toJson())),
+    "wp:attachment": List<dynamic>.from(wpAttachment.map((x) => x.toJson())),
+    "wp:term": List<dynamic>.from(wpTerm.map((x) => x.toJson())),
+    "curies": List<dynamic>.from(curies.map((x) => x.toJson())),
+  };
 }
 
 class About {
@@ -441,12 +412,12 @@ class About {
   String href;
 
   factory About.fromJson(Map<String, dynamic> json) => About(
-        href: json["href"],
-      );
+    href: json["href"],
+  );
 
   Map<String, dynamic> toJson() => {
-        "href": href,
-      };
+    "href": href,
+  };
 }
 
 class Author {
@@ -459,14 +430,14 @@ class Author {
   String href;
 
   factory Author.fromJson(Map<String, dynamic> json) => Author(
-        embeddable: json["embeddable"],
-        href: json["href"],
-      );
+    embeddable: json["embeddable"],
+    href: json["href"],
+  );
 
   Map<String, dynamic> toJson() => {
-        "embeddable": embeddable,
-        "href": href,
-      };
+    "embeddable": embeddable,
+    "href": href,
+  };
 }
 
 class Cury {
@@ -481,16 +452,16 @@ class Cury {
   bool templated;
 
   factory Cury.fromJson(Map<String, dynamic> json) => Cury(
-        name: json["name"],
-        href: json["href"],
-        templated: json["templated"],
-      );
+    name: json["name"],
+    href: json["href"],
+    templated: json["templated"],
+  );
 
   Map<String, dynamic> toJson() => {
-        "name": name,
-        "href": href,
-        "templated": templated,
-      };
+    "name": name,
+    "href": href,
+    "templated": templated,
+  };
 }
 
 class PredecessorVersion {
@@ -502,16 +473,15 @@ class PredecessorVersion {
   int id;
   String href;
 
-  factory PredecessorVersion.fromJson(Map<String, dynamic> json) =>
-      PredecessorVersion(
-        id: json["id"],
-        href: json["href"],
-      );
+  factory PredecessorVersion.fromJson(Map<String, dynamic> json) => PredecessorVersion(
+    id: json["id"],
+    href: json["href"],
+  );
 
   Map<String, dynamic> toJson() => {
-        "id": id,
-        "href": href,
-      };
+    "id": id,
+    "href": href,
+  };
 }
 
 class VersionHistory {
@@ -524,14 +494,14 @@ class VersionHistory {
   String href;
 
   factory VersionHistory.fromJson(Map<String, dynamic> json) => VersionHistory(
-        count: json["count"],
-        href: json["href"],
-      );
+    count: json["count"],
+    href: json["href"],
+  );
 
   Map<String, dynamic> toJson() => {
-        "count": count,
-        "href": href,
-      };
+    "count": count,
+    "href": href,
+  };
 }
 
 class WpTerm {
@@ -546,14 +516,14 @@ class WpTerm {
   String href;
 
   factory WpTerm.fromJson(Map<String, dynamic> json) => WpTerm(
-        taxonomy: json["taxonomy"],
-        embeddable: json["embeddable"],
-        href: json["href"],
-      );
+    taxonomy: json["taxonomy"],
+    embeddable: json["embeddable"],
+    href: json["href"],
+  );
 
   Map<String, dynamic> toJson() => {
-        "taxonomy": taxonomy,
-        "embeddable": embeddable,
-        "href": href,
-      };
+    "taxonomy": taxonomy,
+    "embeddable": embeddable,
+    "href": href,
+  };
 }

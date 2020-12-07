@@ -42,7 +42,6 @@ class _MappageState extends State<Mappage> {
       position: LatLng(latitude, longitude),
     );
 
-
 // Add it to Set
     markers.add(resultMarker);
 

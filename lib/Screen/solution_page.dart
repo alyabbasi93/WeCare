@@ -16,8 +16,6 @@ class _solutionState extends State<solution> {
   List<SolutionModel> _solutionmodel;
   bool _loading;
 
-
-
   // Screen Design
   @override
   Widget build(BuildContext context) {
@@ -26,7 +24,7 @@ class _solutionState extends State<solution> {
         width: 370,
         child: _loading
             ? Center(child: CircularProgressIndicator())
-        // ListView for display items
+            // ListView for display items
             : ListView.builder(
                 itemCount: null == _solutionmodel ? 0 : _solutionmodel.length,
                 scrollDirection: Axis.vertical,
