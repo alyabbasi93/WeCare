@@ -21,7 +21,7 @@ class _videosState extends State<videos> {
 
     return Scaffold(
         body: Container(
-            width: MediaQuery.of(context).size.width / 1.2,
+            width: MediaQuery.of(context).size.width / 1.1,
             child: SingleChildScrollView(
               physics: new BouncingScrollPhysics(),
               scrollDirection: Axis.vertical,

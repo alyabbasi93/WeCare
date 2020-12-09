@@ -103,10 +103,9 @@ class _AppContainerState extends State<AppContainer> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(fontFamily: "Nunito"),
-        home: Scaffold(
+    return WillPopScope(
+        onWillPop: () => Future.value(false),
+        child: Scaffold(
             body: Container(
                 alignment: Alignment.topRight,
                 color: Colors.lightGreen,

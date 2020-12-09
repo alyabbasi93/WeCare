@@ -47,7 +47,7 @@ class _VideoWidgetState extends State<VideoWidget> {
             key: new PageStorageKey(widget.url),
             elevation: 5.0,
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(0.0),
               child: Chewie(
                 key: new PageStorageKey(widget.url),
                 controller: ChewieController(
