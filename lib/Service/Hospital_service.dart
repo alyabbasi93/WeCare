@@ -4,7 +4,7 @@ import 'package:http/http.dart' as http;
 class HospitalServices {
   //define url
   static const String url =
-      'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=33.684422,73.047882&radius=1500&type=hospital&key=AIzaSyDRbag78LuSKI-saGo1ytaWezV86xV1S-U';
+      'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=33.684422,73.047882&radius=1500&type=hospital&key=key';
 
   // Create function to get data and save in Models
 

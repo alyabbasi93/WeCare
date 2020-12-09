@@ -48,9 +48,17 @@ class _InfoDetailState extends State<InfoDetail> {
       bottomNavigationBar: GestureDetector(
           onTap: () => launch("tel:$number"),
           child: Container(
-            height: 100,
+            height: 50,
+            padding: EdgeInsets.only(top: 15),
             color: Colors.red,
-            child: Text('Call'),
+            child: Text(
+              'Call',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                  fontSize: 19,
+                  color: Colors.black,
+                  fontWeight: FontWeight.bold),
+            ),
           )),
       body: SingleChildScrollView(
         child: Column(
@@ -66,7 +74,7 @@ class _InfoDetailState extends State<InfoDetail> {
                     name,
                     textAlign: TextAlign.start,
                     style: TextStyle(
-                        fontSize: 19,
+                        fontSize: 17,
                         color: Colors.black,
                         fontWeight: FontWeight.bold),
                   ),
@@ -88,7 +96,7 @@ class _InfoDetailState extends State<InfoDetail> {
                                   fontSize: 20, fontWeight: FontWeight.bold))),
                       collapsed: Text(
                         info,
-                        style: TextStyle(fontSize: 20),
+                        style: TextStyle(fontSize: 17),
                         textAlign: TextAlign.start,
                         softWrap: true,
                         maxLines: 1,
@@ -102,7 +110,7 @@ class _InfoDetailState extends State<InfoDetail> {
                               padding: EdgeInsets.only(bottom: 10),
                               child: Text(
                                 info,
-                                style: TextStyle(fontSize: 20),
+                                style: TextStyle(fontSize: 17),
                                 textAlign: TextAlign.start,
                                 softWrap: true,
                                 overflow: TextOverflow.fade,
@@ -141,7 +149,7 @@ class _InfoDetailState extends State<InfoDetail> {
                                     fontWeight: FontWeight.bold))),
                         collapsed: Text(
                           service,
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 17),
                           textAlign: TextAlign.start,
                           softWrap: true,
                           maxLines: 1,
@@ -155,7 +163,7 @@ class _InfoDetailState extends State<InfoDetail> {
                                 padding: EdgeInsets.only(bottom: 10),
                                 child: Text(
                                   service,
-                                  style: TextStyle(fontSize: 20),
+                                  style: TextStyle(fontSize: 17),
                                   textAlign: TextAlign.start,
                                   softWrap: true,
                                   overflow: TextOverflow.fade,
@@ -196,7 +204,7 @@ class _InfoDetailState extends State<InfoDetail> {
                                     fontWeight: FontWeight.bold))),
                         collapsed: Text(
                           adress,
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(fontSize: 17),
                           textAlign: TextAlign.start,
                           softWrap: true,
                           maxLines: 1,
@@ -210,7 +218,7 @@ class _InfoDetailState extends State<InfoDetail> {
                                 padding: EdgeInsets.only(bottom: 10),
                                 child: Text(
                                   adress,
-                                  style: TextStyle(fontSize: 20),
+                                  style: TextStyle(fontSize: 17),
                                   textAlign: TextAlign.start,
                                   softWrap: true,
                                   overflow: TextOverflow.fade,

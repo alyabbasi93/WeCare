@@ -57,7 +57,12 @@ class _HomePageState extends State<HomePage> {
                             Expanded(
                                 child: Container(
                               height: 100,
-                              child: Align(child: Text(user.name)),
+                              child: Align(
+                                  alignment: Alignment.bottomLeft,
+                                  child: Text(
+                                    user.name,
+                                    textAlign: TextAlign.start,
+                                  )),
                             ))
                           ],
                         ),
