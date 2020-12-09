@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:healthcare/Model/ExerciseModel.dart';
-import 'package:healthcare/Service/Execiseservice.dart';
+import 'package:healthcare/Service/Execise_service.dart';
 
-import '../Detail_Screen.dart';
+import '../Detail/Detail_Screen.dart';
 
 class ExerciseBlog extends StatefulWidget {
   ExerciseBlog({Key key}) : super(key: key);
@@ -23,7 +23,7 @@ class _ExerciseBlogState extends State<ExerciseBlog> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        width: 370,
+        width: MediaQuery.of(context).size.width / 1.2,
         child: _loading
             ? Center(child: CircularProgressIndicator())
             // ListView for display items
@@ -49,9 +49,6 @@ class _ExerciseBlogState extends State<ExerciseBlog> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            SizedBox(
-                              height: 20,
-                            ),
                             Container(
                                 width: 370,
                                 height: 200,

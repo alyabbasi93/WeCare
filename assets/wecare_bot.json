@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "cheats-for-gta-guide",
+  "private_key_id": "8cfe4c22cdc88d4c71a75fa2ba3b32adaabf3559",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC6KoXrf3HIxvSp\nHY582ZUDN8g0IV4XCKi7RvQ0/DYgmd80/e/DRhCvy/97ZB9f34pTiAdnon62R/sO\ntxUR+PA3+3YnBmBdf4DkBJigVAc1CDYhIr05FFLFrVgABGLzf8wn2Hq53UYfBoT4\nE4tdM2EQIX/eeM6pnrdSX/6BiA+GTyIW8iXv8xK2NO2+fQ7XElVFf0NQGh5e7tfF\n+A6A8i1INsXAfjUwDBJs3pp6G7pjIzBqe7YG2fTL2Zecv4HEnsANuOuC3GEf6o2J\nIdTkIzNRIvPwKJbWB6Gg7G8m6zjyFReeDbX81X4l4qFEGzPNEJ8GxKCkgEYLnp2n\nUDJuwpURAgMBAAECggEADnuhaIVFKlwEC6YPgDoDJDlyO0//PGaBjfRCql6WrWmb\nGknJHdV1FeAWc5iB8lj3L3FtNgxHtFGcP/RRUNEfixNmiTmvRIbXVaXf49U1rFQD\ntgc4Vlj06YkHSBUPR6dBEDaAsbX7rw04Sf5nQKxvGCyrAHlAhqSg2Wk7aQNXRdj/\nHS6Tnrji+qOZRHS7/GfMLDP4cj5mcrpRSbxsfiTiUdkYq8YurmauKiR2ci/jhkfX\n8pCYn8i1AqZAiGFOHrAtsmuP2xLuONX2HYY9HZA7eTVeC+yC6lsMY5SCZUb3QdYM\ntOnmB1yH1SNxeVPUr1CHNsztCkoR8+H2ORmAljTZIQKBgQDqnt38bNGs+qAw1hXg\niLmQxLa4kqpubhhf3UC3eNkwnVI8sY0f9/zzASNyYco1z5SyMgkCO7lwbnmsjWmt\nd/FGwMD+FEEmcn3yEm3M7rOym5vIuYmWOvKRARJ5B9d5HQlF26FNLvH471HT38cr\nG4kpj17or8le6bKk1aqeaEyKOQKBgQDLIVR3kzkC8Q05OiVuxQ5Z58iih3ei1E3+\nmNHwstIXUV75PGPRIP5/6OzpP6ROEGMsu58nj4KW0w5EJwSQI31gqtMb66RguVCk\nbVI2nVK66AxQrl792dKS0I+gHvVlKU9GhtFi5DRZnyQXFnxz/JvX0BzlT4PmzvpN\nRT72h0fBmQKBgGO6LZ+LXcDKM2cuyNPNKhtoEkb4SKtx7rho4oZaPu+UH42e5t7M\n2V8tf7Sx7nLbDliEPiIN4u/wdZWr8lyC3DL34dDeKSc/iVtpC/UNDaMA08IJY3tR\nCSQrsX9ynttjRTrFdZXKO55Vk5Gc0Br5tF7PC0ea2NyYN5ArJj/5E3e5AoGAJCu9\nNMW8gy+VYTlfbQgd9Bh3+6kPvqj7cniX+bp9+rT8qnj8dULgzroVZbt1cIkuf8qx\nHoRJhr3ybmRcRaZsLwh8Kx6c2LRnDcCBwUPmdW3Ys405UQ62lnoY+TRKEkd23GIp\nauikAcl6zbmtU6IJxjZCzvqHzFPS8muAOLoCJxECgYBAaiG4q2LYTQYWmg/W4DEs\njk8OQbgyon4BwYfTG2XMGlQkFkLkAv4gYN/OAR+C+c6uTQB0YX8CMfRmfPWhin4T\nj735KcYBusfOYd4DkqLwMeu7m3ldr5zsFJXPhWvdgILrdabF200yy4+QuL9p9aXH\nMWyRADpalfkd+JHxXh7Zaw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "wecare@cheats-for-gta-guide.iam.gserviceaccount.com",
+  "client_id": "104173875781344434290",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/wecare%40cheats-for-gta-guide.iam.gserviceaccount.com"
+}

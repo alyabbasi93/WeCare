@@ -2,16 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:healthcare/Model/ProblemsModels.dart';
-import 'package:healthcare/Service/Problems_Service.dart';
+import 'package:healthcare/Service/urduproblem_Service.dart';
 
-import '../Detail/Detail_Screen.dart';
+import '../../Detail/Detail_Screen.dart';
 
-class Problems extends StatefulWidget {
+class Problemsurdu extends StatefulWidget {
   @override
-  _ProblemsState createState() => _ProblemsState();
+  _ProblemsurduState createState() => _ProblemsurduState();
 }
 
-class _ProblemsState extends State<Problems> {
+class _ProblemsurduState extends State<Problemsurdu> {
   // initilize  Variable
   List<ProblemsModels> _problemmodel;
   bool _loading;
@@ -21,7 +21,8 @@ class _ProblemsState extends State<Problems> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        width: MediaQuery.of(context).size.width / 1.2,
+        margin: EdgeInsets.only(left: 60),
+        width: MediaQuery.of(context).size.width / 0.6,
         child: _loading
             ? Center(child: CircularProgressIndicator())
             // ListView for display items
@@ -44,10 +45,10 @@ class _ProblemsState extends State<Problems> {
                       },
                       child: Card(
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.end,
                           children: <Widget>[
                             Container(
-                                margin: EdgeInsets.only(right: 10),
+                                margin: EdgeInsets.only(right: 0),
                                 height: 200,
                                 child: Image.network(
                                   'https://wecare2021.000webhostapp.com/wp-content/uploads/${user.betterFeaturedImage.mediaDetails.file}',
@@ -60,8 +61,9 @@ class _ProblemsState extends State<Problems> {
                             ),
                             Text(
                               user.title.rendered,
+                              textAlign: TextAlign.end,
                               style: GoogleFonts.asul(
-                                fontSize: 20,
+                                fontSize: 18,
                                 color: Colors.black,
                                 fontWeight: FontWeight.bold,
                               ),
@@ -83,7 +85,7 @@ class _ProblemsState extends State<Problems> {
     // Loading Data
     _loading = true;
     super.initState();
-    ProblemsServices.getproblems().then((users) {
+    ProblemsurduServices.getproblemsurdu().then((users) {
       setState(() {
         _problemmodel = users;
         _loading = false;

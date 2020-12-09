@@ -3,18 +3,16 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class Mappage extends StatefulWidget {
-  Mappage({Key key}) : super(key: key);
+class Mappage extends StatelessWidget {
+// Declare a field that holds the Todo
+  final latitude;
+  final longitude;
+  final name;
 
-  @override
-  _MappageState createState() => _MappageState();
-}
-
-class _MappageState extends State<Mappage> {
-  //initilize variable
-  var latitude = 37.42796133580664;
-  var longitude = -122.085749655962;
-  var name = 'abc';
+// In the constructor, require a Todo.
+  Mappage({Key key, @required this.longitude, this.latitude, this.name})
+      : super(key: key);
+  String data;
 
   @override
   initState() {}
@@ -23,14 +21,10 @@ class _MappageState extends State<Mappage> {
   Widget build(BuildContext context) {
     print(longitude.toString());
     print(latitude.toString());
-
-    //define google map controller
     Completer<GoogleMapController> _controller = Completer();
-    //set Marker
     Set<Marker> markers = Set();
-    // inital map Camera position
     final CameraPosition _kGooglePlex = CameraPosition(
-      target: LatLng(37.42796133580664, -122.085749655962),
+      target: LatLng(latitude, longitude),
       zoom: 14.4746,
     );
 
@@ -41,22 +35,23 @@ class _MappageState extends State<Mappage> {
       infoWindow: InfoWindow(title: name),
       position: LatLng(latitude, longitude),
     );
-
 // Add it to Set
     markers.add(resultMarker);
-
-    // Map Design
     return Scaffold(
-      body: Container(
-        child: GoogleMap(
-          mapType: MapType.normal,
-          markers: markers,
-          initialCameraPosition: _kGooglePlex,
-          onMapCreated: (GoogleMapController controller) {
-            _controller.complete(controller);
-          },
+        appBar: AppBar(
+          backgroundColor: Colors.lightGreen,
+          title: Text("Location", textAlign: TextAlign.center),
         ),
-      ),
-    );
+        //
+        body: Container(
+          child: GoogleMap(
+            mapType: MapType.normal,
+            initialCameraPosition: _kGooglePlex,
+            markers: markers,
+            onMapCreated: (GoogleMapController controller) {
+              _controller.complete(controller);
+            },
+          ),
+        ));
   }
 }

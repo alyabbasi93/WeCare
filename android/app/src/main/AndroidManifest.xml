@@ -7,10 +7,10 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="healthcare"
+        android:label="WeCare"
         android:icon="@mipmap/ic_launcher">
         <meta-data android:name="com.google.android.geo.API_KEY"
-            android:value=""/>
+            android:value="AIzaSyCkHk-p6lNebBeiLhBNv1KBjScpGwsgF44"/>
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

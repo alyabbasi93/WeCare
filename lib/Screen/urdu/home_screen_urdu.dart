@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:healthcare/Detail/info_detail.dart';
+import 'package:healthcare/Detail/info_screen_urdu.dart';
 import 'package:healthcare/Model/InformationModel.dart';
 import 'package:healthcare/Service/Information_Servise.dart';
 
-class HomePage extends StatefulWidget {
+class HomeScreenUrdu extends StatefulWidget {
+  HomeScreenUrdu({Key key}) : super(key: key);
+
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomeScreenUrduState createState() => _HomeScreenUrduState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomeScreenUrduState extends State<HomeScreenUrdu> {
   // initilize  Variable
   List<InformationModel> _informationModel;
   bool _loading;
@@ -18,7 +20,8 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        width: MediaQuery.of(context).size.width / 1.2,
+        margin: EdgeInsets.only(left: 60),
+        width: MediaQuery.of(context).size.width / 0.6,
         child: _loading
             ? Center(child: CircularProgressIndicator())
             // ListView for display items
@@ -34,19 +37,35 @@ class _HomePageState extends State<HomePage> {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => InfoDetail(
-                                    name: user.name,
-                                    services: user.servises,
-                                    info: user.information,
-                                    adress: user.adress,
+                              builder: (context) => infoscreen(
+                                    name: user.uName,
+                                    services: user.uService,
+                                    info: user.uInfo,
+                                    adress: user.uAdress,
                                     number: user.number,
                                   )),
                         );
                       },
-                      child: Card(
+                      child: Container(
+                        height: 100,
+                        margin:
+                            EdgeInsets.only(left: 50, bottom: 10, right: 10),
                         child: Row(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.end,
                           children: <Widget>[
+                            Expanded(
+                                child: Container(
+                              height: 100,
+                              child: Align(
+                                  alignment: Alignment.bottomRight,
+                                  child: Text(
+                                    user.uName,
+                                    textAlign: TextAlign.end,
+                                    style: TextStyle(
+                                        fontSize: 17,
+                                        fontWeight: FontWeight.bold),
+                                  )),
+                            )),
                             Container(
                               child: Image.asset(
                                 'assets/images/hospital.png',
@@ -54,11 +73,6 @@ class _HomePageState extends State<HomePage> {
                                 width: 100,
                               ),
                             ),
-                            Expanded(
-                                child: Container(
-                              height: 100,
-                              child: Align(child: Text(user.name)),
-                            ))
                           ],
                         ),
                       ));

@@ -1,14 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-import 'Video_player.dart';
+import '../Video_player.dart';
 
-class videos extends StatefulWidget {
+class videosurdu extends StatefulWidget {
   @override
-  _videosState createState() => _videosState();
+  _videosurduState createState() => _videosurduState();
 }
 
-class _videosState extends State<videos> {
+class _videosurduState extends State<videosurdu> {
   @override
   Widget build(BuildContext context) {
     List itemList = [
@@ -21,7 +21,7 @@ class _videosState extends State<videos> {
 
     return Scaffold(
         body: Container(
-            width: MediaQuery.of(context).size.width / 1.2,
+            width: MediaQuery.of(context).size.width / 0.8,
             child: SingleChildScrollView(
               physics: new BouncingScrollPhysics(),
               scrollDirection: Axis.vertical,
@@ -36,8 +36,12 @@ class _videosState extends State<videos> {
                     addAutomaticKeepAlives: true,
                     itemCount: itemList.isEmpty ? 0 : itemList.length,
                     itemBuilder: (BuildContext context, int index) => Container(
-                      width: double.infinity,
+                      margin: EdgeInsets.only(
+                        left: 50,
+                        bottom: 10,
+                      ),
                       height: 300,
+                      width: 100,
                       alignment: Alignment.center,
                       child: Container(
                           key: new PageStorageKey(

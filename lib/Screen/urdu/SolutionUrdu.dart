@@ -1,19 +1,19 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:healthcare/Model/ProblemsModels.dart';
-import 'package:healthcare/Service/Problems_Service.dart';
+import 'package:healthcare/Model/SolutionModel.dart';
+import 'package:healthcare/Service/solutionurduServices.dart';
 
-import '../Detail/Detail_Screen.dart';
+import '../../Detail/Detail_Screen.dart';
 
-class Problems extends StatefulWidget {
+class solutionurdu extends StatefulWidget {
   @override
-  _ProblemsState createState() => _ProblemsState();
+  _solutionurduState createState() => _solutionurduState();
 }
 
-class _ProblemsState extends State<Problems> {
+class _solutionurduState extends State<solutionurdu> {
   // initilize  Variable
-  List<ProblemsModels> _problemmodel;
+  List<SolutionModel> _solutionmodel;
   bool _loading;
 
   // Screen Design
@@ -21,16 +21,17 @@ class _ProblemsState extends State<Problems> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        width: MediaQuery.of(context).size.width / 1.2,
+        margin: EdgeInsets.only(left: 60),
+        width: MediaQuery.of(context).size.width / 0.6,
         child: _loading
             ? Center(child: CircularProgressIndicator())
             // ListView for display items
             : ListView.builder(
-                itemCount: null == _problemmodel ? 0 : _problemmodel.length,
+                itemCount: null == _solutionmodel ? 0 : _solutionmodel.length,
                 scrollDirection: Axis.vertical,
                 itemBuilder: (context, i) {
-                  print(_problemmodel.length);
-                  ProblemsModels user = _problemmodel[i];
+                  print(_solutionmodel.length);
+                  SolutionModel user = _solutionmodel[i];
                   return GestureDetector(
                       onTap: () {
                         Navigator.push(
@@ -44,10 +45,10 @@ class _ProblemsState extends State<Problems> {
                       },
                       child: Card(
                         child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                          crossAxisAlignment: CrossAxisAlignment.end,
                           children: <Widget>[
                             Container(
-                                margin: EdgeInsets.only(right: 10),
+                                width: 370,
                                 height: 200,
                                 child: Image.network(
                                   'https://wecare2021.000webhostapp.com/wp-content/uploads/${user.betterFeaturedImage.mediaDetails.file}',
@@ -60,11 +61,11 @@ class _ProblemsState extends State<Problems> {
                             ),
                             Text(
                               user.title.rendered,
+                              textAlign: TextAlign.end,
                               style: GoogleFonts.asul(
-                                fontSize: 20,
-                                color: Colors.black,
-                                fontWeight: FontWeight.bold,
-                              ),
+                                  fontSize: 18,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
                             ),
                             SizedBox(
                               height: 20,
@@ -83,9 +84,9 @@ class _ProblemsState extends State<Problems> {
     // Loading Data
     _loading = true;
     super.initState();
-    ProblemsServices.getproblems().then((users) {
+    solutionurduServices.geturdusolution().then((users) {
       setState(() {
-        _problemmodel = users;
+        _solutionmodel = users;
         _loading = false;
       });
     });

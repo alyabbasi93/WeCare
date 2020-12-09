@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:healthcare/Model/SolutionModel.dart';
-import 'package:healthcare/Service/Solutionservice.dart';
+import 'package:healthcare/Service/Solution_service.dart';
 
-import '../Detail_Screen.dart';
+import '../Detail/Detail_Screen.dart';
 
 class solution extends StatefulWidget {
   @override
@@ -21,7 +21,7 @@ class _solutionState extends State<solution> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        width: 370,
+        width: MediaQuery.of(context).size.width / 1.2,
         child: _loading
             ? Center(child: CircularProgressIndicator())
             // ListView for display items
@@ -46,9 +46,6 @@ class _solutionState extends State<solution> {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: <Widget>[
-                            SizedBox(
-                              height: 20,
-                            ),
                             Container(
                                 width: 370,
                                 height: 200,
